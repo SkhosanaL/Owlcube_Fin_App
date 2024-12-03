@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Control Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5e2e2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            width: 100%;
+            background-color: #c7B1B1;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        .header .user-info {
+            display: flex;
+            justify-content: space-between;
+            max-width: 400px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        .container {
+            width: 400px;
+            padding: 15px;
+            background-color: #dcdad9;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 140px;
+            margin-top: 8px;
+            vertical-align: top;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: calc(100% - 150px);
+            padding: 3px;
+            margin-top: 5px;
+            border: 1px solid #c7b1b1;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .checkbox-group label, .radio-group label {
+            width: auto;
+            margin: 0;
+            font-size: 14px;
+        }
+        .radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
+            margin-right: 3px;
+        }
+        .footer {
+            background-color: #d5e8c1;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .footer .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .footer .row label {
+            width: auto;
+        }
+        .credit-rating {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        .credit-rating div {
+            width: 15px;
+            height: 15px;
+            border-radius: 4px;
+        }
+        .credit-rating .red {
+            background-color: red;
+        }
+        .credit-rating .green {
+            background-color: green;
+        }
+        .reason-box {
+            width: 100%;
+            margin-top: 5px;
+        }
+        .reason-box textarea {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #c7b1b1;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        .close-button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            background-color: #c7b1b1;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .close-button:hover {
+            background-color: #a59494;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <span>User_id: 01286116TGNKOSI</span>
+            <span>Credit Control Assessment</span>
+            <span>Username: <b>TGH Nkosi</b></span>
+        </div>
+    </div>
+    <div class="container">
+        <form>
+            <label for="credit_assessment_id">Credit_Assessment_id:</label>
+            <input type="text" id="credit_assessment_id" name="credit_assessment_id"><br>
+
+            <label for="loan_id">Loan_id:</label>
+            <input type="text" id="loan_id" name="loan_id"><br>
+
+            <label for="loan_account_number">Loan_Account_number:</label>
+            <input type="text" id="loan_account_number" name="loan_account_number"><br>
+
+            <label for="identity_number">Identity_Number:</label>
+            <input type="text" id="identity_number" name="identity_number"><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br>
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="M"> M</label>
+                <label><input type="radio" name="gender" value="F"> F</label>
+            </div>
+
+            <div class="footer">
+                <div class="row">
+                    <label>ITC - verified</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="itc_verified" value="Y"> Y</label>
+                        <label><input type="checkbox" name="itc_verified" value="N"> N</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>Age >= 18</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="age_verified" value="Y"> Y</label>
+                        <label><input type="checkbox" name="age_verified" value="N"> N</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>Expenses <= 50% Salary</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="expenses_verified" value="Y"> Y</label>
+                        <label><input type="checkbox" name="expenses_verified" value="N"> N</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>Loan_Status:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="loan_status" value="Approved"> Approved</label>
+                        <label><input type="checkbox" name="loan_status" value="Not_Approved"> Not Approved</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="credit_score_card">Credit_score_card:</label>
+                    <input type="text" id="credit_score_card" name="credit_score_card">
+                </div>
+                <div class="row">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" value="2024-05-02">
+                </div>
+                <div class="row credit-rating">
+                    <label>Credit_Rating:</label>
+                    <div class="red"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="row reason-box">
+                    <label for="reason">Reason for Disapproval:</label>
+                    <textarea id="reason" name="reason"></textarea>
+                </div>
+            </div>
+            <button type="button" class="close-button" onclick="window.close();">Close</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

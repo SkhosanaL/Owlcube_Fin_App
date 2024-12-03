@@ -1,0 +1,325 @@
+body{
+  background-color: #e5e2e2;
+  margin: 0;
+}
+.header-main{
+  width: 100%;
+  height: 60px;
+  background-color: #c7B1B1;
+  display: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  flex-direction: row no-repeat;
+  top: 0;
+  
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#welcome-message{
+  text-align: center;
+  margin-top: 95px;
+
+}
+.header-main-logo{
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-main-nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: 1150px;
+ 
+  /*margin: 0;
+  padding: 0;*/
+}
+
+.header-main ul li a {
+  display:flex;
+  float: right;
+  padding-right: 20px;
+}
+  
+.header-main-nav{
+ display:flex;
+ justify-content: space-between;
+ margin-left: auto; 
+ padding-right: 20px;  
+}
+
+.get-peace-of{
+  text-align: center;
+}
+.we-are-here-container{
+  text-align: center;
+}
+.flexible-payment-options{
+  margin-left: 300px;
+ 
+}
+
+.flex-pay-low-interests{
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+}
+.low-interests-rates{
+  margin-right: 415px;
+ }
+
+ .Loan-types{
+  text-align: center;
+ }
+  /*Modal-Styling*/
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover, .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /*End of Styling*/
+
+.Loan-types-selection-cards{
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; 
+  padding: 16px; 
+  justify-items: center;
+  align-items: center; 
+}
+
+.cards{
+  border: 2px solid hsl(59, 98%, 49%); /* Card border */
+  border-radius: 2em; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  text-align: center; /* Centered text */
+  width: 55%; /* Make cards take full column width */
+  height: fit-content;
+  background-color: #9393FF; /* Optional background color */
+}
+
+.terms-link{
+  color: white;
+}
+  
+
+
+.term-of-payment{
+  color: rgb(244, 6, 6);
+ }
+
+ span i a {
+  color: red;
+}
+
+.Why-use-Owl{
+  font-size: 2rem;
+  text-align: center;
+}
+
+#free-happy-family {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.first-block-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.text {
+  flex: 1;
+  padding-right: 20px; /* Adjust padding for spacing */
+  align-items: center;
+  text-align: left;
+  margin-left: 480px;
+}
+
+.Free-to-use {
+  font-weight: bold;
+  text-align: left; /* Align the text with the icon */
+  text-shadow: 2px 2px 3px #9bf0f1;
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+
+.Free-to-use .icon {
+  margin-right: 10px; /* Adds space between icon and text */
+}
+
+.Loan-Comparison {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.happy-family-img {
+  max-width: 350px;
+  height: auto;
+  flex-shrink: 0;
+}
+#Mother-child{
+  display: flex;
+  justify-content:left;
+  text-align: right;
+
+}
+.No-risk-Obligation-text{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.No-risk-icon-text{
+  flex: 1;
+  justify-content: left;
+  text-align: left;
+  margin-left: 100px;
+}
+.textnext-icon{
+  display: flex;
+  text-shadow: 2px 2px 3px #9bf0f1;
+  align-items: center;
+  text-align: left;
+  font-weight: bold;
+}
+.mother-child-img{
+  margin-left: 10%;
+  flex-shrink: 0;
+}
+#We-Transparent-container {
+  display: flex;
+  justify-content: center; /* Centers the container content horizontally */
+  align-items: flex-start;
+  width: 100%;
+}
+
+.icon-text-paragraph-and-image {
+  display: flex;
+  justify-content: space-between; /* Pushes the image to the right */
+  align-items: flex-start;
+  width: 90%; /* Adjusts width of the section */
+}
+
+.Icon-Transparent-text-and-Paragraph {
+  flex: 1;
+  padding-right: 20px; /* Adds space between the text and image */
+  text-align: left;
+}
+
+.icon-We-Transparent {
+  display: flex;
+  align-items: center; /* Aligns the icon and text */
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #9bf0f1;
+  font-size: 2rem;
+}
+
+.We-Transparent-img {
+  margin-right: 10px; /* Adds space between the icon and the text */
+  width: 50px; /* Adjust icon size */
+}
+
+.third-paragraph-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: left;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.corporate-office-img {
+  width: 400px; /* Adjust image size */
+  height: auto;
+  align-self: flex-start; /* Aligns image to top */
+}
+
+footer{
+  height: 34%;
+  width: 100%;
+  background-color: #9393FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+}
+#Privacy-Statement{
+  text-align: left;
+  padding-left: 1em;
+}
+div.social-media i{
+  align-items: center;
+  padding-left: 40px;
+
+}
+div.social-media{
+  margin-left: 380px;
+}
+div.Copyright-reserved{
+  display: flex;
+  align-items: center;
+  text-align: right;
+ }
+
+#Physical-Address{
+  padding-right: 3em;
+  
+
+}
+
+.Physical-Address2{
+  color: rgb(210, 30, 36);
+}
+.Physical-Address3{
+  color: rgb(210, 30, 36);
+}
+
+div.Privacy-Policy p{
+  
+  margin-left: 4%;
+  padding-right: 40px;
+}
+
+div.Privacy-Policy{
+  text-align: center;
+  text-align: justify;
+}

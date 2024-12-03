@@ -1,0 +1,97 @@
+body{
+  background-color: #e5e2e2;
+  margin: 0;
+}
+.header-main{
+  width: 100%;
+  height: 60px;
+  background-color: #c7B1B1;
+  display: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  flex-direction: row no-repeat;
+  top: 0;
+  
+}
+.header-main-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between logo and navigation */
+}
+
+.header-main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.header-main-nav ul li {
+  margin-left: 20px; /* Space between links */
+}
+
+.header-main-nav ul li a {
+  text-decoration: none;
+  color: black; 
+  font-weight: bold;
+}
+
+/* Container to center the form */
+.user-reg-form-cont {
+  display: flex;
+  margin-top: -4%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  
+}
+
+.User-Registration-form {
+  width: 100%; /* You can adjust the width here */
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(186, 210, 4, 0.2);
+  background-color: #ffffff7f;
+  text-align: center;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input{
+  width: 100%;
+  padding: 4px;
+  margin-top: 2px;
+  border: #c7B1B1;
+  border-radius: 20px;
+  align-content: center;
+  align-items: center;
+}
+
+#reg-submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  /* Adjusted margin */
+  display: block;
+  margin: 70px auto;
+  margin-left: 5px;
+  width: 70%;
+  cursor: pointer;
+}
+
+#message-reg{
+  text-align: center;
+  margin-top: 20px;
+}
+
+#MessageResults {
+  font-size: 25px;
+  font-weight: bold;
+}

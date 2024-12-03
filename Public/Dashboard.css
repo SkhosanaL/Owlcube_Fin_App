@@ -1,0 +1,366 @@
+body{
+  background-color: #e5e2e2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.header-main{
+  width: 100%;
+  height: 60px;
+  background-color: #c7B1B1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  flex-direction: row no-repeat;
+  top: 0;
+  padding: 0 20px;
+}
+.header-main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Allows full width alignment */
+}
+.header-main-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between logo and navigation */
+}
+
+#dateTimeDisplay {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 auto; /* Centering DateTime */
+  text-align: center;
+}
+
+.header-main-nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  
+}
+
+.header-main-nav ul li {
+  margin-left: 1000px;
+  
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color:#c7B1B1;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  padding-top: 20px;
+  color: #fff;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+}
+
+.sidebar ul li a {
+  color: #f20000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+#welcomemessage-dashboard{
+  text-align: center;
+  margin-top: 95px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+/*
+.header-main-nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: 1175px;
+}*/
+
+.Loan-Process{
+  align-items: center;
+  padding-left: 450px;
+  padding-bottom: 500px;
+}
+
+#Note-Message{
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(244, 244, 244);
+}
+
+.cards{
+  padding-top: 80px;
+  border: 2px solid hsl(59, 98%, 49%); /* Card border */
+  border-radius: 2em; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  text-align: center; /* Centered text */
+  width: 60%; /* Make cards take full column width */
+  height: fit-content;
+  background-color: #9393FF; /* Optional background color */
+  align-content: center;
+}
+footer{
+  height: 15%;
+  width: 100%;
+  background-color: #9393FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+#Privacy-Statement{
+  padding-left: 1em;
+}
+
+div.Copyright-reserved{
+  text-align: right;
+  padding-right: 3em;
+ }
+
+#Physical-Address{
+  padding-right: 3em;
+ 
+}
+
+.Physical-Address2{
+  color: rgb(210, 30, 36);
+}
+.Physical-Address3{
+  color: rgb(210, 30, 36);
+}
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Enable vertical scrolling if content is too tall */
+  padding: 20px; /* Padding to avoid the modal touching screen edges */
+  box-sizing: border-box;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #f5f5f5;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Limit max width for readability */
+  max-height: 90vh; /* Limit height to 90% of the viewport */
+  overflow-y: auto; /* Enable scrolling within the modal if content is too tall */
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="number"] {
+  width: 60%; /* Adjust input field width */
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Add padding at the bottom of the modal to ensure space for buttons */
+.modal-content {
+  padding-bottom: 60px;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: sticky;
+  bottom: 10px; /* Position at the bottom of the modal */
+  background-color: #f5f5f5;
+  padding-top: 10px;
+}
+
+button[type="button"],
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+/*Loan-App Form*/
+
+#loanAppContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+.loan-app-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#FormButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#loanAppContainer input, #loanAppContainer select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#loanAppContainer button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/*Savings Account CSS Form*/
+#SavingsAccount {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.Savings-App-popup {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 60%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Savings-App-popup h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.Savings-App-popup label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.Savings-App-popup input[type="text"],
+.Savings-App-popup input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #a2db07;
+  border-radius: 5px;
+}
+
+#FormButtons-savings {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#FormButtons-savings button {
+  padding: 8px 12px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#Generate-Savings-Acc-No { background-color: blue; }
+#Deposit-Amount { background-color: green; }
+#Print-Statement { background-color: grey; }
+#closeSavingsForm { background-color: red; }
+
+.transaction-log {
+  margin-top: 20px;
+}
+
+.transaction-log table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-log th,
+.transaction-log td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-log th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./register.css">
+  <script src="https://kit.fontawesome.com/99366aea50.js" crossorigin="anonymous"></script>
+  <title>Account_Login-Owl Microfinance</title>
+</head>
+  <body>
+          <header class="header-main">
+             <div class="header-main-logo">
+              <img src="./img/OwlBarnx.jpg" alt="owlmfi">
+              <nav class="header-main-nav">
+                <ul>
+                  <li><a href="http://localhost:3500/Public/Home.html">Home</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+         <container class="user-reg-form-cont">
+              <form id="Login-form">
+                    <h3>Customer Login</h3>
+                  <label for="email">Email Address:</label>
+                  <input type="email" id="email" name="email" required>
+          
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+                  
+                  <button  type="submit" id="reg-submit-btn">Login</button>
+                  <div class="text-centre">
+                      <p>Don't have an account yet? <a href="/Public/user-registration.html">Register-Account</a></p>
+                  </div>
+                  <div id="message-reg">
+                    <p id="MessageResults"></p>
+                  </div>
+              </form>
+         </container>
+         <script src="./login.js" defer></script>
+  </body>

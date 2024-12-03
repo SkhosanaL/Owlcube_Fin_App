@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f4f4;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #dcdad9;
+            padding: 20px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-sizing: border-box;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            color: #8c7a75;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sidebar button {
+            background-color: #c7b1b1;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            text-align: left;
+            cursor: pointer;
+            color: black;
+            width: 100%;
+        }
+        .sidebar button:hover {
+            background-color: #b5a3a3;
+        }
+        /* Main content styling */
+        .main-content {
+            flex-grow: 1;
+            background-color: #f7f4f4;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #eedddd;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000;
+        }
+        .header-title {
+            font-size: 24px;
+            color: #4a7bdd;
+            font-weight: bold;
+            margin: 0;
+        }
+        .logout {
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .logout:hover {
+            color: darkgreen;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f4d8d8;
+            font-size: 14px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+        .info-section div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info-section div input {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #c7b1b1;
+            border-radius: 4px;
+        }
+        .center-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            padding: 30px;
+        }
+        .center-section h4 {
+            font-size: 16px;
+            color: red;
+            margin: 0;
+        }
+        .center-section button {
+            background-color: #c7b1b1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: black;
+        }
+        .center-section button:hover {
+            background-color: #b5a3a3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Financial_Transaction</h3>
+        <button>Savings_Accounts</button>
+        <button>Loan Disbursement</button>
+        <button>Portfolio Management</button>
+        <button>Balance_Sheet</button>
+        <button>Income_Statement</button>
+        <button>Cash_Flows</button>
+        <button>Report Per Customer</button>
+        <button>Transfers</button>
+        <button>Settlements</button>
+        <button>Total_Loan_Book_Value</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <span class="header-title">DASHBOARD</span>
+            <span class="logout" onclick="closeForm()">Logout</span>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <div>
+                <span>User_Logged-on</span>
+                <input type="text">
+            </div>
+            <div>
+                <span>Date/Time</span>
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- Center Section -->
+        <div class="center-section">
+            <h4>Reports and Analytics</h4>
+            <button>Transaction Account</button>
+            <div style="display: flex; gap: 15px;">
+                <button>Loan Payment</button>
+                <button>Withdrawals</button>
+                <button>Deposits</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeForm() {
+            alert('Logging out...');
+            window.close(); // Attempt to close the window
+        }
+    </script>
+</body>
+</html>

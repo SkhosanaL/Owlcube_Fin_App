@@ -1,0 +1,25 @@
+{
+  "name": "owlcube",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "express": "^4.21.0",
+    "formidable": "^3.5.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.11.3"
+  }
+}

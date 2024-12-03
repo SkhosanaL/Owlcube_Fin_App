@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="/Public/LoanApp.css">
+  <script src="https://kit.fontawesome.com/99366aea50.js" crossorigin="anonymous"></script>
+  <title>LoanApp-Owl Microfinance</title>
+</head>
+  <body>
+      <header class="header-main">
+             <div class="header-main-logo">
+              <img src="./img/OwlBarnx.jpg" alt="owlmfi">
+              <nav class="header-main-nav">
+                <ul>
+                  <li><a href="http://localhost:3500/Public/Home.html">Home</a></li>
+                </ul>
+              </nav>
+            </div>
+      </header>
+      <container class="Loan-app-container-form">
+
+        <form id="Loan-App-form" action="/submitLoanApplication" method="POST">
+          <h3> Loan Application</h3>
+          <label for="LoanAccountNumber" style="display:none;">Loan Account Number:</label>
+          <input type="text" id="LoanAccountNumber" name="Loan_Account_number" readonly style="display:none;">
+
+          <label for="Loantype">Loan Type:</label>
+          <select id="Loantype" name="Loan_type" required>
+            <option value="" disabled selected>Select a loan type</option>
+            <option value="personal">Personal_Loan</option>
+            <option value="solar">Solar_Loan</option>
+            <option value="business_rescue">Business_Rescue_Loan</option>
+          </select>
+          <label for="LoanAmount">Loaning Amount:</label>
+          <input type="text" id="LoanAmount" name="Loaned_Amount" required>
+
+          <label for="LoanTerm">Loan Term:</label>
+          <select id="Loanterm" name="Loan_Term" required>
+            <option value="" disabled selected>Select a loan term</option>
+            <option value="eighteenmonths">18-One year six months</option>
+            <option value="twentyfourmonths">24-Two years</option>
+            <option value="thirtysixmonths">36-Three years</option>
+            <option value="fortyeightmonths">48-Four years</option>
+            <option value="Seventytwomonths">72-Six years</option>
+            <option value="onehundredandtwenty">120-Ten years</option>
+            <option value="twohundredandtwenty">20-years</option>
+          </select>
+
+          <label for="DateofApplication">Date of Application:</label>
+          <input type="date" id="DateofApplication" name="Date_of_Application" required>
+
+           <div id="FormButtons">
+              <button type="submit" id="submit-Loan-form">Submit Application</button>
+              <button type="Close" id="Close-Loan-Form">Close Form</button>
+          </div>
+          
+        </form>
+      </container>
+      <script></script>
+  </body>
+</html>

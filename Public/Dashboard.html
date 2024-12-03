@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="/Public/Dashboard.css">
+  <script src="/Public/dashboard.js" defer></script>
+  <script src="https://kit.fontawesome.com/99366aea50.js" crossorigin="anonymous"></script>
+  <title>Dashboard - Owl Microfinance</title>
+</head>
+<body>
+    <header class="header-main">
+        <div class="header-main-logo">
+             <img src="/Public/img/OwlBarnx.jpg" alt="owlmfi">
+             <nav class="header-main-nav">
+                <span id="dateTimeDisplay"></span>
+                 <ul>
+                  <li><a href="http://localhost:3500/Public/Home.html">Logout</a></li>
+                 </ul>
+              </nav>
+        </div>
+  </header>
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#" id="customerProfileLink">Customer Profile</a></li>
+      <li><a href="#" id="uploadDocumentsLink">Submit Supporting Documents</a></li>
+      <li><a href="#" id="loanApplicationLink">Loan Application</a></li>
+      <li><a href="#" id="savingsAccountLink">Savings Account</a></li>
+      <li><a href="/loanStatusForm" target="_blank" id="loanStatusLink">Loan Status</a></li>
+
+    </ul>
+  </aside>
+    <div>
+        <h1 id="welcomemessage-dashboard">Welcome to Owl Microfinance Corporation</h1>
+    </div>
+    <main>
+      <div class="Loan-Process"> 
+        <div class="cards">
+              <h3 id="process-heading"> Our Loan Application Process</h3>
+              <p id="">Step1: Fill in the Customer Profile form in the sidebar menu.</p>
+              <p id="">Step2: Will Verify your profile and request further information such as idcopy,3-months bank statement, proof of income.</p>
+              <p id="">Step3: After all required information has been submitted , you will be inform of your loan application outcome via email.</p>
+              <p id="Note-Message">****Note: Our Loan approval process usually takes 48hrs-2days at most**** </p>
+       </div>
+     </div>
+    </main>
+       <!-- Customer Details Modal -->
+    <div id="customerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeCustomerModal()">&times;</span>
+        <h2>Fill in Customer Details</h2>
+        <form id="customerForm" action="/submitCustomerProfile" method="POST">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" placeholder="Title" required>
+          
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+          
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+    
+          <label for="address">Physical Address:</label>
+          <input type="text" id="address" name="address" placeholder="Physical Address" required>
+    
+          <label for="rsaId">RSA Identity Number:</label>
+          <input type="text" id="rsaId" name="rsaId" placeholder="RSA Identity Number" required>
+    
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+    
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+    
+          <label for="occupation">Occupation:</label>
+          <input type="text" id="occupation" name="occupation" placeholder="Occupation" required>
+    
+          <label for="income">Monthly Gross Income R:</label>
+          <input type="number" id="income" name="income" placeholder="Monthly Gross Income" required>
+    
+          <label for="expenses">Total Monthly Expenses R:</label>
+          <input type="number" id="expenses" name="expenses" placeholder="Total Monthly Expenses" required>
+
+          <label for="returningCustomer">Returning Customer:</label>
+          <input type="text" id="returningCustomer" name="returningCustomer" placeholder="Yes/No" required>
+    
+          <div>
+            <p><strong>Terms and Conditions</strong></p>
+            <p>By using our products, you acknowledge that your information will be processed according to our <a href="/Public/Privacy_Statement.html" target="_blank">Privacy Statement</a>.</p>
+            
+            <label>
+              <input type="checkbox" id="confirmPrivacy" required>
+              * I have read and understood the Privacy Statement.
+            </label>
+            
+            <label>
+              <input type="checkbox" id="confirmInsolvency" required>
+              * I confirm I am not insolvent or under debt review.
+            </label>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="button" onclick="closeCustomerModal()">Cancel</button>
+            <button type="submit" id="submitBtn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Financial History Modal -->
+<div id="uploadModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeUploadModal()">&times;</span>
+    <h2>Upload Supporting Documents</h2>
+    <p>Upload your payslip, 3-months bank statement, RSA ID copy, proof of residence...</p>
+    <form id="uploadForm" action="/uploadDocument" method="POST" enctype="multipart/form-data">
+      
+      <label for="documentFile">Choose File:</label>
+      <input type="file" id="documentFile" name="documentFile" required>
+
+      <button type="submit">Upload</button> 
+     
+    </form>
+    <div id="uploadMessage" style="margin-top: 10px; color: green;"></div>
+  </div>
+</div>
+<!-- Loan Application Popup Form -->
+<div id="loanAppContainer" style="display: none;">
+  <div class="loan-app-popup">
+    <h3>Loan Application</h3>
+    <form id="Loan-App-form" action="/submitLoanApplication" method="POST">
+      <label for="LoanAccountNumber">Loan Account Number:</label>
+      <input type="text" id="LoanAccountNumber" name="Loan_Account_number" readonly>
+
+      <label for="Loantype">Loan Type:</label>
+      <select id="Loantype" name="Loan_type" required>
+        <option value="" disabled selected>Select a loan type</option>
+        <option value="personal">Personal Loan</option>
+        <option value="solar">Solar Loan</option>
+        <option value="business_rescue">Business Rescue Loan</option>
+      </select>
+
+      <label for="LoanAmount">Loaning Amount:</label>
+      <input type="text" id="LoanAmount" name="Loaned_Amount" required>
+
+      <label for="LoanTerm">Loan Term:</label>
+      <select id="Loanterm" name="Loan_Term" required>
+        <option value="" disabled selected>Select a loan term</option>
+        <option value="18">18-One year six months</option>
+        <option value="24">24-Two years</option>
+        <option value="36">36-Three years</option>
+        <option value="48">48-Four years</option>
+        <option value="36">72-Six years</option>
+        <option value="120">120-Ten years</option>
+        <option value="240">20-years</option>
+      </select>
+
+      <div id="FormButtons">
+        <button type="submit" id="submit-Loan-form">Submit Application</button>
+        <button type="button" id="closeLoanForm">Close</button>
+      </div>
+          <!-- Success message placeholder in Dashboard -->
+          <p id="successMessage" style="display: none; color: green;">Application submitted successfully!</p>
+    </form>
+  </div>
+</div>
+  <!-- Savings Account Form-->
+<div id="SavingsAccount" style="display: none;">
+  <div class="Savings-App-popup">
+    <h3>Savings Account for Payment</h3>
+    <form id="Savings-App-form" action="/submitPaymentAccounts" method="POST">
+      <label for="SavingsAccountNumber">Savings Account Number:</label>
+      <input type="text" id="SavingsAccountNumber" name="Savings_Account_number" readonly>
+
+      <label for="DateAccountOpened">Date Account Opened:</label>
+      <input type="date" id="DateAccountOpened" name="Date_opened">
+
+      <label for="DepositAmount">Deposit Amount:</label>
+      <input type="text" id="DepositAmount" name="Deposit">
+
+      <label for="DateofDeposit">Date of Deposit:</label>
+      <input type="date" id="DateofDeposit" name="Date_of_Deposit">
+      
+      <label for="Balance">Balance:</label>
+      <input type="text" id="Balance" name="Balance" readonly>
+   
+      <div id="FormButtons-savings">
+        <button type="button" id="Generate-Savings-Acc-No" style="background-color: blue;">Generate Savings Account Number</button>
+        <button type="button" id="Deposit-Amount" style="background-color: green;">Submit Deposit Amount</button>
+        <button type="button" id="Print-Statement" style="background-color: grey;">Print Statement</button>
+        <button type="button" id="closeSavingsForm" style="background-color: red;">Close</button>
+      </div>
+
+      <!-- Transaction Log -->
+      <div class="transaction-log">
+        <h4>Transaction Log</h4>
+        <table id="transactionTableBody">
+          <thead>
+            <tr>
+              <th>Payments</th>
+              <th>Payment Date</th>
+              <th>Bank Interest Rate</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="transactionTableBody">
+            <!-- Transaction items will be inserted here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
+<!--Loan Status Form-->
+<div id="LoanStatus" style="display: none;">
+  <div class="loan-status-container">
+    <form id="loanStatusForm">
+      <div class="form-row">
+        <label for="savingsAccountNumber">Savings Account Number:</label>
+        <input type="text" id="savingsAccountNumber" readonly>
+        
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" readonly>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" readonly>
+      </div>
+
+      <div class="form-row">
+        <label for="identityNumber">Identity Number:</label>
+        <input type="text" id="identityNumber" readonly>
+
+        <label for="emailAddress">Email Address:</label>
+        <input type="text" id="emailAddress" readonly>
+
+        <label for="loanedAmount">Loaned Amount:</label>
+        <input type="text" id="loanedAmount" readonly>
+      </div>
+
+      <div class="form-row">
+        <label for="loanType">Loan Type:</label>
+        <input type="text" id="loanType" readonly>
+
+        <label for="loanTerm">Loan Term:</label>
+        <input type="text" id="loanTerm" readonly>
+
+        <label for="dateOfApplication">Date of Application:</label>
+        <input type="text" id="dateOfApplication" readonly>
+      </div>
+
+      <div class="application-status">
+        <label>Application Status:</label>
+        <input type="checkbox" id="statusInProgress" disabled checked> Application in Progress
+        <input type="checkbox" id="statusApproved" disabled> Approved
+        <input type="checkbox" id="statusRejected" disabled> Rejected
+      </div>
+
+      <button type="button" class="close-button" onclick="closeLoanStatusForm()">Close</button>
+    </form>
+  </div>
+</div>
+<!-- Footer -->
+  <footer>
+      <div id="Privacy-Statement">
+        <span><a href="/Public/Privacy_Statement.html">Privacy Statement.</a></span>
+      </div>
+     
+      <div class="Copyright-reserved">
+          <span>Copyrights Reserved Owl MFISystems.</span>
+      </div>
+      <container id="Physical-Address">
+        <p class="Physical-Address2">NCR#262-884-8489</p>
+        <p class="Physical-Address3">FICALicence#012548</p>
+      </container>
+  </footer>  
+    <script src="./dashboard.js"></script>  
+</body>
+</html>
